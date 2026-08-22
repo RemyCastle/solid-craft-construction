@@ -227,7 +227,7 @@ function JobFields({
       <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
         Job
         <select className="field-ink" value={preset} onChange={(event) => onPreset(event.target.value)}>
-          <option value="">Custom</option>
+          <option value="">None of these</option>
           {JOB_PRESETS.map((name) => (
             <option key={name} value={name}>
               {name}
@@ -241,7 +241,7 @@ function JobFields({
           className="field-ink"
           value={custom}
           onChange={(event) => onCustom(event.target.value)}
-          placeholder={preset ? "Optional" : "Required if no preset"}
+          placeholder={preset ? "Leave blank" : "Required if no preset"}
         />
       </label>
     </div>
@@ -498,8 +498,8 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
       <section className="flex flex-col gap-4">
         <h2 className="text-4xl">Work photos</h2>
         <p className="text-sm text-mute">
-          Public stack only shows a photo that has a picture. Pick a card job or type a custom title. Do
-          not invent titles.
+          Pick the job: Decks, Fences, Siding, Drywall, Windows, or Roofing. Custom title only if none of
+          those fit. That title is what the public photo shows. Do not invent titles.
         </p>
         <form
           className="flex flex-col gap-3 bg-card p-4 ring-1 ring-gold/40"
@@ -520,15 +520,21 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
             Add photo
             <input name="file" type="file" accept="image/*" required className="field-ink py-2" />
           </label>
-          <select name="job_preset" className="field-ink" defaultValue="">
-            <option value="">Custom</option>
-            {JOB_PRESETS.map((name) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-          </select>
-          <input name="job_custom" className="field-ink" placeholder="Custom title if needed" />
+          <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
+            Job
+            <select name="job_preset" className="field-ink" defaultValue="">
+              <option value="">None of these</option>
+              {JOB_PRESETS.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
+            Custom title
+            <input name="job_custom" className="field-ink" placeholder="Only if none of those fit" />
+          </label>
           <button type="submit" className="cta cta-call w-fit" style={{ minHeight: "44px" }}>
             Upload
           </button>
@@ -616,8 +622,8 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
       <section className="flex flex-col gap-4">
         <h2 className="text-4xl">Comparisons</h2>
         <p className="text-sm text-mute">
-          Optional. Upload a real Before and a real After. Stays off until Visible is on. Do not invent a
-          pair.
+          Optional. Upload a real Before and a real After. Pick the job, or a custom title if none fit.
+          Stays off until Visible is on. Do not invent a pair or a title.
         </p>
         <form
           className="flex flex-col gap-3 bg-card p-4 ring-1 ring-gold/40"
@@ -642,15 +648,21 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
             After
             <input name="after" type="file" accept="image/*" required className="field-ink py-2" />
           </label>
-          <select name="job_preset" className="field-ink" defaultValue="">
-            <option value="">Custom</option>
-            {JOB_PRESETS.map((name) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-          </select>
-          <input name="job_custom" className="field-ink" placeholder="Custom title if needed" />
+          <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
+            Job
+            <select name="job_preset" className="field-ink" defaultValue="">
+              <option value="">None of these</option>
+              {JOB_PRESETS.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
+            Custom title
+            <input name="job_custom" className="field-ink" placeholder="Only if none of those fit" />
+          </label>
           <button type="submit" className="cta cta-call w-fit" style={{ minHeight: "44px" }}>
             Upload pair
           </button>

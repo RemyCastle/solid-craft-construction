@@ -77,7 +77,7 @@ export type SiteRow = {
 export const JOB_PRESETS = ["Decks", "Fences", "Siding", "Drywall", "Windows", "Roofing"] as const
 
 export function jobCaption(preset: string, custom: string) {
-  return (custom || preset || "").trim()
+  return (preset || custom || "").trim()
 }
 
 export function slugFromCaption(caption: string) {

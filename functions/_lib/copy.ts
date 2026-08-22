@@ -43,7 +43,7 @@ export function firstName(name: string) {
 }
 
 export function jobCaption(preset: string, custom: string) {
-  return (custom || preset || "").trim()
+  return (preset || custom || "").trim()
 }
 
 export function slugFromCaption(caption: string) {
