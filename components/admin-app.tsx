@@ -614,9 +614,10 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
       </section>
 
       <section className="flex flex-col gap-4">
-        <h2 className="text-4xl">Before / after</h2>
+        <h2 className="text-4xl">Comparisons</h2>
         <p className="text-sm text-mute">
-          Off until both images are uploaded and Visible is on. Never invent a pair.
+          Optional. Upload a real Before and a real After. Stays off until Visible is on. Do not invent a
+          pair.
         </p>
         <form
           className="flex flex-col gap-3 bg-card p-4 ring-1 ring-gold/40"
@@ -681,6 +682,7 @@ function PhotosTab({ onNote }: { onNote: (n: string) => void }) {
                 <input
                   type="checkbox"
                   checked={Boolean(pair.visible)}
+                  disabled={!pair.before_src || !pair.after_src}
                   onChange={async (event) => {
                     try {
                       await api("/api/admin/comparisons", {

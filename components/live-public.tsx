@@ -59,9 +59,7 @@ export function LivePublicProvider({ children }: { children: React.ReactNode }) 
           ? ((photoRes.photos as LivePhoto[]) || []).filter((photo) => photo.src && photo.caption)
           : fallbackPhotos
         const pairs = photoRes
-          ? ((photoRes.pairs as LivePair[]) || []).filter(
-              (pair) => pair.before && pair.after && pair.caption,
-            )
+          ? ((photoRes.pairs as LivePair[]) || []).filter((pair) => pair.before && pair.after)
           : fallbackPairs
         setState({ copy, services, photos, pairs, live: Boolean(siteRes || photoRes) })
       })

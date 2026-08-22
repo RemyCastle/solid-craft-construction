@@ -2,14 +2,14 @@
 
 import Link from "next/link"
 
-import { BeforeAfter } from "@/components/before-after"
+import { BeforeAfter, pairIsComplete } from "@/components/before-after"
 import { useLive } from "@/components/live-public"
 import { slugFromCaption } from "@/lib/public"
 
 export function WorkStack() {
   const { photos, pairs } = useLive()
   const imaged = photos.filter((photo) => photo.src && photo.caption)
-  const sliders = pairs.filter((pair) => pair.before && pair.after && pair.caption)
+  const sliders = pairs.filter((pair) => pairIsComplete(pair))
 
   if (imaged.length === 0 && sliders.length === 0) return null
 
