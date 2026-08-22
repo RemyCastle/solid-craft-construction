@@ -19,21 +19,23 @@ export function SiteHeader() {
           <BrandMark priority className="h-10 w-auto" />
           <span className="sr-only">{site.legalName}</span>
         </Link>
-        <div className="flex min-w-0 shrink items-center justify-end gap-2">
+        <div className="flex min-w-0 items-center justify-end gap-2">
           <a
             href={joel.phoneTel}
-            className="cta cta-call max-w-full px-3 whitespace-nowrap"
+            className="cta cta-call px-3 whitespace-nowrap"
             style={{ minHeight: "2.6rem", fontSize: "1.05rem" }}
           >
             {joel.cta}
           </a>
-          <a
-            href={ahren.phoneTel}
-            className="cta cta-call max-md:hidden px-3 whitespace-nowrap"
-            style={{ minHeight: "2.6rem", fontSize: "1.05rem" }}
-          >
-            {ahren.cta}
-          </a>
+          <div className="hidden md:block">
+            <a
+              href={ahren.phoneTel}
+              className="cta cta-call px-3 whitespace-nowrap"
+              style={{ minHeight: "2.6rem", fontSize: "1.05rem" }}
+            >
+              {ahren.cta}
+            </a>
+          </div>
         </div>
       </div>
       <nav className="flex items-center justify-around border-t border-gold/40 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.16em] md:justify-center md:gap-10">
