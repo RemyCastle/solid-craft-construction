@@ -64,7 +64,7 @@ export const workPhotos = [
 ] as const
 
 export const marks = {
-  logoMark: "/logo-mark.png",
+  logoMark: "/logo-cutout.png",
   logoTile: "/logo-tile.png",
   cardLockup: "/card-front.png",
   og: "/og.png",

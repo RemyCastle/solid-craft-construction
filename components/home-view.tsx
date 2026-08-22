@@ -1,5 +1,5 @@
+import { BrandMark } from "@/components/brand-mark"
 import { CallPair } from "@/components/call-pair"
-import { CardLockup } from "@/components/card-lockup"
 import { ServiceList } from "@/components/service-list"
 import { WorkStack } from "@/components/work-stack"
 import { site } from "@/lib/site"
@@ -7,10 +7,10 @@ import { site } from "@/lib/site"
 export function HomeView() {
   return (
     <div className="bg-ground">
-      <section className="border-b border-gold/50">
+      <section>
         <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-10 text-center sm:py-14">
-          <CardLockup />
-          <h1 className="mt-10 max-w-xl text-4xl text-ink sm:text-5xl md:text-[3.4rem]">
+          <BrandMark priority className="h-28 w-auto sm:h-36" />
+          <h1 className="mt-8 max-w-xl text-4xl text-ink sm:text-5xl md:text-[3.4rem]">
             {site.heroTitle}
           </h1>
           <p className="mt-5 max-w-md text-lg font-medium text-mute sm:text-xl">{site.heroLead}</p>
@@ -23,7 +23,7 @@ export function HomeView() {
         </div>
       </section>
 
-      <section id="work" className="border-b border-gold/50">
+      <section id="work" className="border-t border-gold/40">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h2 className="text-center text-4xl sm:text-5xl">{site.workHeading}</h2>
           <WorkStack />
