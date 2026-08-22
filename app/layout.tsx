@@ -1,10 +1,5 @@
 import type { Metadata } from "next"
 
-import { JsonLd } from "@/components/json-ld"
-import { QuoteBlock } from "@/components/quote-block"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
-import { ThumbDock } from "@/components/thumb-dock"
 import { marks, site } from "@/lib/site"
 
 import "./globals.css"
@@ -57,16 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full bg-ground text-ink">
-        <JsonLd />
-        <div className="flex min-h-full flex-col pb-28 md:pb-0">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <QuoteBlock />
-          <SiteFooter />
-          <ThumbDock />
-        </div>
-      </body>
+      <body className="min-h-full bg-ground text-ink">{children}</body>
     </html>
   )
 }

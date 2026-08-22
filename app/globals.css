@@ -173,6 +173,34 @@
   background: #dcb368;
 }
 
+.admin-tab {
+  min-height: 2.75rem;
+  border: 1px solid #dcb368;
+  background: transparent;
+  color: #f3f1ec;
+  font-family: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-tab-on {
+  background: #dcb368;
+  color: #1a1e22;
+}
+
+.admin-mini {
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid #dcb368;
+  background: transparent;
+  color: #f3f1ec;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 767px) {
   .header-ahren {
     display: none !important;

@@ -13,10 +13,11 @@ export const site = {
   seoTitle: "Solid Craft Construction LLC | Decks, fences, siding, drywall, windows, roofing",
   seoDescription:
     "Decks, fences, siding, drywall, windows, roofing. Free estimates. Call Joel or Ahren. Hablamos español.",
-  about: "Joel and Ahren Paz. Solid Craft Construction LLC. Estimates are free. We speak Spanish.",
+  about: "Joel and Ahren Paz.\nSolid Craft Construction LLC.\nEstimates are free.\nWe speak Spanish.",
   quoteHeading: "Email a job",
   quoteSubmit: "Send",
   quoteHelper: "Or call Joel or Ahren.",
+  quotePhotos: "Job photos, optional",
   quoteThanks: "Sent. They will call or email you back.",
   freeEstimates: "Free estimates",
   ctaSecondary: "Email us",

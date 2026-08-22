@@ -1,8 +1,12 @@
+"use client"
+
 import Link from "next/link"
 
-import { services, site } from "@/lib/site"
+import { useLive } from "@/components/live-public"
 
 export function ServiceList() {
+  const { copy, services } = useLive()
+
   return (
     <ul className="mx-auto mt-8 flex max-w-lg flex-col gap-3">
       {services.map((service) => (
@@ -19,7 +23,7 @@ export function ServiceList() {
         </li>
       ))}
       <li className="pt-3 text-center font-display text-xl font-semibold uppercase tracking-[0.16em] text-gold">
-        <Link href="/#quote">{site.freeEstimates}</Link>
+        <Link href="/#quote">{copy.freeEstimates}</Link>
       </li>
     </ul>
   )
