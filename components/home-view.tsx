@@ -1,6 +1,7 @@
 import { CallPair } from "@/components/call-pair"
 import { CardLockup } from "@/components/card-lockup"
 import { ServiceList } from "@/components/service-list"
+import { WorkStack } from "@/components/work-stack"
 import { site } from "@/lib/site"
 
 export function HomeView() {
@@ -25,6 +26,7 @@ export function HomeView() {
       <section id="work" className="border-b border-gold/50">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h2 className="text-center text-4xl sm:text-5xl">{site.workHeading}</h2>
+          <WorkStack />
           <ServiceList />
         </div>
       </section>

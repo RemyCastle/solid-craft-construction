@@ -1,5 +1,6 @@
 import { CallPair } from "@/components/call-pair"
 import { ServiceList } from "@/components/service-list"
+import { WorkStack } from "@/components/work-stack"
 import { site } from "@/lib/site"
 
 export function ServicesView() {
@@ -9,6 +10,7 @@ export function ServicesView() {
         <h1 className="text-center font-display text-5xl uppercase tracking-[0.04em] sm:text-6xl">
           {site.workHeading}
         </h1>
+        <WorkStack />
         <ServiceList />
         <div className="mx-auto mt-12 flex max-w-md flex-col items-center gap-3">
           <CallPair />

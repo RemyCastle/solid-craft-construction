@@ -49,7 +49,7 @@ First FormSubmit send asks that inbox to confirm the address.
 - Work (card back order): Decks, Fences, Siding, Drywall, Windows, Roofing
 - Free estimates
 
-No street. No town. No CCB. No hours. No star scores. No job photos we do not have. No Georgia copy. Do not print 541-422-2372.
+No street. No town. No CCB. No hours. No star scores. No Georgia copy. Do not print 541-422-2372. Do not label work photos Porches or Junk removal.
 
 ## Look
 
@@ -59,4 +59,4 @@ Big Shoulders Display + Libre Franklin.
 - Hero is the printed card (table knocked out): SC + house, SOLID white / CRAFT gold, Joel and Ahren, Hablamos español, email
 - `public/logo-mark.png` — SC + house crop for chrome
 - `public/logo-tile.png` — same mark on a charcoal tile
-- No work gallery until they send job photos
+- Work stack: three amateur job shots only — Decks, Siding, Decks. No porch photo.

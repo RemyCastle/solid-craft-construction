@@ -57,6 +57,12 @@ export const services = [
   { slug: "roofing", name: "Roofing", line: "Roof work. Call first." },
 ] as const
 
+export const workPhotos = [
+  { src: "/work/decks.jpg", caption: "Decks", slug: "decks", width: 810, height: 1080 },
+  { src: "/work/siding.jpg", caption: "Siding", slug: "siding", width: 810, height: 1080 },
+  { src: "/work/stairs.jpg", caption: "Decks", slug: "decks", width: 810, height: 1080 },
+] as const
+
 export const marks = {
   logoMark: "/logo-mark.png",
   logoTile: "/logo-tile.png",
