@@ -13,9 +13,9 @@ export function BrandMark({
     <Image
       src={marks.logoMark}
       alt={site.legalName}
-      width={834}
-      height={340}
-      className={`object-contain ${className}`}
+      width={472}
+      height={339}
+      className={`bg-transparent object-contain ${className}`}
       unoptimized
       priority={priority}
     />

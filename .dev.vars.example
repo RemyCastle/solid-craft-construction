@@ -1,0 +1,3 @@
+# Copy to .dev.vars for local wrangler pages dev. Do not commit .dev.vars.
+# openssl rand -hex 32
+SESSION_SECRET=
