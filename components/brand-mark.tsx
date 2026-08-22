@@ -13,7 +13,7 @@ export function BrandMark({
     <Image
       src={marks.logoMark}
       alt={site.legalName}
-      width={834}
+      width={479}
       height={340}
       className={`object-contain ${className}`}
       unoptimized

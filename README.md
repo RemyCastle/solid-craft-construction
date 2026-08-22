@@ -56,7 +56,8 @@ No street. No town. No CCB. No hours. No star scores. No Georgia copy. Do not pr
 Ground `#1A1E22`. Card `#212426`. Ink `#F3F1EC`. Gold `#DCB368`. Mute `#7C8387`.
 Big Shoulders Display + Libre Franklin.
 
-- Hero is the printed card (table knocked out): SC + house, SOLID white / CRAFT gold, Joel and Ahren, Hablamos español, email
-- `public/logo-mark.png` — SC + house crop for chrome
-- `public/logo-tile.png` — same mark on a charcoal tile
+- Hero is the printed card photo (`public/card-front.png`) on `#1A1E22`. No HTML card twin.
+- `public/logo-mark.png` — SC + house crop, transparent, no black box
+- `public/logo-tile.png` — same mark on ground `#1A1E22`
+- Mobile header: Call Joel fully visible. Ahren in the dock/footer. Hablamos español on the card + footer.
 - Work stack: three amateur job shots only — Decks, Siding, Decks. No porch photo.

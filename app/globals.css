@@ -120,6 +120,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
   min-height: 3.25rem;
   padding: 0.45rem 1.1rem;
   font-family: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
