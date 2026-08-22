@@ -84,6 +84,10 @@ export function aboutLines(about: string) {
   return about.replace(/\r\n/g, "\n").split("\n")
 }
 
+export function photoIsReady(photo: Pick<LivePhoto, "src">) {
+  return Boolean(photo.src?.trim())
+}
+
 export function slugFromCaption(caption: string) {
   const hit = services.find((service) => service.name === caption)
   return hit?.slug || caption.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")

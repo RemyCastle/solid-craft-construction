@@ -33,7 +33,7 @@ export async function onRequestGet({ env }: { env: Env }) {
           height: photo.height || 1080,
         }
       })
-      .filter((photo) => photo.src && photo.caption)
+      .filter((photo) => photo.src?.trim())
     const livePairs = (pairs.results || [])
       .map((row) => {
         const pair = row as {

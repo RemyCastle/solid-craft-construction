@@ -10,9 +10,10 @@ export function pairIsComplete(pair: Pick<LivePair, "before" | "after">) {
 
 export function BeforeAfter({ pair }: { pair: LivePair }) {
   const [pct, setPct] = useState(50)
+  const [hidden, setHidden] = useState(false)
   const box = useRef<HTMLDivElement>(null)
 
-  if (!pairIsComplete(pair)) return null
+  if (!pairIsComplete(pair) || hidden) return null
 
   function setFromClientX(clientX: number) {
     const el = box.current
@@ -39,7 +40,13 @@ export function BeforeAfter({ pair }: { pair: LivePair }) {
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={pair.after} alt="" draggable={false} className="pointer-events-none block h-auto w-full" />
+        <img
+          src={pair.after}
+          alt=""
+          draggable={false}
+          className="pointer-events-none block h-auto w-full"
+          onError={() => setHidden(true)}
+        />
         <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${pct}%` }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -48,6 +55,7 @@ export function BeforeAfter({ pair }: { pair: LivePair }) {
             draggable={false}
             className="pointer-events-none absolute inset-y-0 left-0 h-full max-w-none"
             style={{ width: `${(100 / pct) * 100}%` }}
+            onError={() => setHidden(true)}
           />
         </div>
         <div className="pointer-events-none absolute inset-y-0 z-10" style={{ left: `${pct}%` }}>

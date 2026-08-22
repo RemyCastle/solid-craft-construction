@@ -7,6 +7,7 @@ import {
   fallbackPairs,
   fallbackPhotos,
   fallbackServices,
+  photoIsReady,
   type LiveCopy,
   type LivePair,
   type LivePhoto,
@@ -56,11 +57,11 @@ export function LivePublicProvider({ children }: { children: React.ReactNode }) 
             ? (siteRes.services as LiveService[])
             : fallbackServices
         const photos = photoRes
-          ? ((photoRes.photos as LivePhoto[]) || []).filter((photo) => photo.src && photo.caption)
-          : fallbackPhotos
+          ? ((photoRes.photos as LivePhoto[]) || []).filter((photo) => photoIsReady(photo))
+          : fallbackPhotos.filter((photo) => photoIsReady(photo))
         const pairs = photoRes
           ? ((photoRes.pairs as LivePair[]) || []).filter((pair) => pair.before && pair.after)
-          : fallbackPairs
+          : fallbackPairs.filter((pair) => pair.before && pair.after)
         setState({ copy, services, photos, pairs, live: Boolean(siteRes || photoRes) })
       })
       .catch(() => {
