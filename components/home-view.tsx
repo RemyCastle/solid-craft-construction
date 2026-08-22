@@ -8,7 +8,7 @@ export function HomeView() {
     <div className="bg-ground">
       <section className="border-b border-gold/50">
         <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-10 text-center sm:py-14">
-          <CardLockup priority className="h-auto w-full max-w-md ring-1 ring-gold/60" />
+          <CardLockup />
           <h1 className="mt-10 max-w-xl text-4xl text-ink sm:text-5xl md:text-[3.4rem]">
             {site.heroTitle}
           </h1>

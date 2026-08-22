@@ -8,7 +8,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
       <span className="rule mx-auto mt-2 max-w-[14rem] font-sans text-[0.7rem] font-medium uppercase tracking-[0.28em] text-ink">
         Construction
       </span>
-      <span className="mt-1 block font-sans text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-gold">
+      <span className="rule mx-auto mt-1 max-w-[10rem] font-sans text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-ink">
         LLC
       </span>
     </p>

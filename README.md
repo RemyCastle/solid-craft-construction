@@ -56,6 +56,7 @@ No street. No town. No CCB. No hours. No star scores. No job photos we do not ha
 Ground `#1A1E22`. Card `#212426`. Ink `#F3F1EC`. Gold `#DCB368`. Mute `#7C8387`.
 Big Shoulders Display + Libre Franklin.
 
-- `public/card-lockup.jpg` — printed-card crop (mark + SOLID CRAFT CONSTRUCTION LLC)
-- `public/logo-mark.png` — SC + house crop from that card, for chrome
+- Hero is the printed card (table knocked out): SC + house, SOLID white / CRAFT gold, Joel and Ahren, Hablamos español, email
+- `public/logo-mark.png` — SC + house crop for chrome
 - `public/logo-tile.png` — same mark on a charcoal tile
+- No work gallery until they send job photos
