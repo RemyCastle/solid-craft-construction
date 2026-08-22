@@ -33,7 +33,7 @@ export function SiteHeader() {
           </a>
           <a
             href={ahren.phoneTel}
-            className="cta cta-call hidden px-3 md:inline-flex"
+            className="cta cta-call max-md:hidden px-3"
             style={{ minHeight: "2.6rem", fontSize: "1.05rem" }}
           >
             {ahren.cta}
