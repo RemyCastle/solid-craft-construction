@@ -27,7 +27,7 @@ export function SiteHeader() {
           >
             {joel.cta}
           </a>
-          <div className="hidden md:block">
+          <div className="header-ahren hidden md:block">
             <a
               href={ahren.phoneTel}
               className="cta cta-call px-3 whitespace-nowrap"

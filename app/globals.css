@@ -173,6 +173,12 @@
   background: #dcb368;
 }
 
+@media (max-width: 767px) {
+  .header-ahren {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
