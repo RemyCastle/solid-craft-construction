@@ -298,7 +298,7 @@ function SiteTab({ onNote }: { onNote: (n: string) => void }) {
     >
       {field("hero_title", "H1", 2)}
       {field("hero_lead", "Lead", 2)}
-      {field("about", "About — one sentence per line", 6)}
+      {field("about", "About — one sentence per line. Newlines stay.", 6)}
       {field("joel_name", "Joel name")}
       {field("joel_phone_display", "Joel phone")}
       {field("joel_cta", "Joel CTA")}

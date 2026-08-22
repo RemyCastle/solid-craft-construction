@@ -21,7 +21,7 @@ export async function onRequestPut({ request, env }: { request: Request; env: En
   const s = body.site || {}
   const hero_title = String(s.hero_title || "").trim()
   const hero_lead = String(s.hero_lead || "").trim()
-  const about = String(s.about || "").replace(/\r\n/g, "\n")
+  const about = String(s.about || "").replace(/\r\n/g, "\n").replace(/[ \t]+\n/g, "\n")
   const joel_name = String(s.joel_name || "").trim()
   const joel_phone_display = String(s.joel_phone_display || "").trim()
   const joel_cta = String(s.joel_cta || "").trim()

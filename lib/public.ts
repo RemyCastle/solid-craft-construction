@@ -80,6 +80,10 @@ export function jobCaption(preset: string, custom: string) {
   return (preset || custom || "").trim()
 }
 
+export function aboutLines(about: string) {
+  return about.replace(/\r\n/g, "\n").split("\n")
+}
+
 export function slugFromCaption(caption: string) {
   const hit = services.find((service) => service.name === caption)
   return hit?.slug || caption.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")

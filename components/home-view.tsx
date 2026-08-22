@@ -5,6 +5,7 @@ import { CallPair } from "@/components/call-pair"
 import { useLive } from "@/components/live-public"
 import { ServiceList } from "@/components/service-list"
 import { WorkStack } from "@/components/work-stack"
+import { aboutLines } from "@/lib/public"
 
 export function HomeView() {
   const { copy } = useLive()
@@ -38,7 +39,11 @@ export function HomeView() {
       <section>
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h2 className="text-4xl sm:text-5xl">{copy.aboutHeading}</h2>
-          <p className="mt-6 max-w-xl whitespace-pre-line text-xl font-medium">{copy.about}</p>
+          <div className="mt-6 flex max-w-xl flex-col text-xl font-medium leading-snug">
+            {aboutLines(copy.about).map((line, index) => (
+              <p key={`${index}-${line}`}>{line || "\u00a0"}</p>
+            ))}
+          </div>
         </div>
       </section>
     </div>
