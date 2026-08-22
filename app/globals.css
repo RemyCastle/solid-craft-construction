@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/fonts/big-shoulders-display-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/big-shoulders-display-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/big-shoulders-display-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url("/fonts/big-shoulders-display-latin-800-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/libre-franklin-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/fonts/libre-franklin-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/libre-franklin-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/libre-franklin-latin-700-normal.woff2") format("woff2");
+}
+
+@theme inline {
+  --color-background: #1a1e22;
+  --color-foreground: #f3f1ec;
+  --color-ground: #1a1e22;
+  --color-card: #212426;
+  --color-ink: #f3f1ec;
+  --color-gold: #dcb368;
+  --color-mute: #7c8387;
+  --font-sans: "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: #1a1e22;
+  --foreground: #f3f1ec;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #1a1e22;
+    color: #f3f1ec;
+  }
+
+  body {
+    background: #1a1e22;
+    color: #f3f1ec;
+    font-family: "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1 {
+    font-family: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  h2,
+  h3 {
+    font-family: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 0.95;
+    font-weight: 700;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.45rem 1.1rem;
+  font-family: "Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cta-call {
+  background: #dcb368;
+  color: #1a1e22;
+}
+
+.cta-mail {
+  background: transparent;
+  color: #f3f1ec;
+  box-shadow: inset 0 0 0 2px #dcb368;
+}
+
+.field-ink {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid #dcb368;
+  background: #212426;
+  padding: 0.55rem 0.75rem;
+  font-family: "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  color: #f3f1ec;
+}
+
+.field-ink:focus {
+  outline: 2px solid #dcb368;
+  outline-offset: 0;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rule::before,
+.rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #dcb368;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
