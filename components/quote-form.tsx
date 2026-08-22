@@ -1,6 +1,23 @@
+"use client"
+
+import { useState, useSyncExternalStore } from "react"
+
 import { services, site } from "@/lib/site"
 
+function subscribe() {
+  return () => {}
+}
+
+function jobFromUrl() {
+  const slug = new URLSearchParams(window.location.search).get("job")
+  return services.find((service) => service.slug === slug)?.name ?? ""
+}
+
 export function QuoteForm() {
+  const urlJob = useSyncExternalStore(subscribe, jobFromUrl, () => "")
+  const [picked, setPicked] = useState<string | null>(null)
+  const job = picked ?? urlJob
+
   return (
     <form action={site.formSubmit} method="POST" className="flex max-w-xl flex-col gap-4">
       <input type="hidden" name="_subject" value={`Estimate — ${site.legalName}`} />
@@ -36,7 +53,14 @@ export function QuoteForm() {
       </label>
       <label className="flex flex-col gap-1 text-xs font-bold uppercase tracking-[0.16em]">
         Job
-        <select id="quote-job" name="job" required defaultValue="" className="field-ink">
+        <select
+          id="quote-job"
+          name="job"
+          required
+          value={job}
+          onChange={(event) => setPicked(event.target.value)}
+          className="field-ink"
+        >
           <option value="" disabled>
             Pick one
           </option>

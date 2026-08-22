@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 PUBLIC.mkdir(exist_ok=True)
 
-CHARCOAL = (20, 20, 20, 255)
-GOLD = (201, 162, 39, 255)
-WHITE = (245, 245, 243, 255)
+CHARCOAL = (26, 30, 34, 255)
+GOLD = (220, 179, 104, 255)
+WHITE = (243, 241, 236, 255)
 CLEAR = (0, 0, 0, 0)
 
 FONT = "/usr/share/fonts/truetype/macos/Inter-Bold.ttf"

@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Inter, Oswald } from "next/font/google"
 
 import { JsonLd } from "@/components/json-ld"
 import { QuoteBlock } from "@/components/quote-block"
@@ -9,18 +8,6 @@ import { ThumbDock } from "@/components/thumb-dock"
 import { marks, site } from "@/lib/site"
 
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-})
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-oswald",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
@@ -69,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable} h-full`}>
+    <html lang="en" className="h-full">
       <body className="min-h-full bg-ground text-ink">
         <JsonLd />
         <div className="flex min-h-full flex-col pb-28 md:pb-0">

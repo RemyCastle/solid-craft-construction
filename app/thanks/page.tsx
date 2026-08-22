@@ -15,6 +15,9 @@ export default function ThanksPage() {
       <h1 className="text-5xl">Sent</h1>
       <p className="text-xl font-medium">{site.quoteThanks}</p>
       <CallPair />
+      <a href={site.emailMailto} className="cta cta-mail w-fit">
+        {site.ctaSecondary}
+      </a>
       <Link href="/" className="cta cta-mail w-fit">
         Home
       </Link>

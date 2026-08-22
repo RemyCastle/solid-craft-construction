@@ -13,31 +13,30 @@ export function HomeView() {
           <div className="mt-5">
             <Wordmark />
           </div>
-          <h1 className="mt-10 max-w-xl text-4xl text-ink sm:text-5xl md:text-6xl">
+          <h1 className="mt-10 max-w-xl text-4xl text-ink sm:text-5xl md:text-[3.4rem]">
             {site.heroTitle}
           </h1>
           <p className="mt-5 max-w-md text-lg font-medium text-mute sm:text-xl">{site.heroLead}</p>
           <div className="mt-8 flex w-full flex-col items-center gap-3">
             <CallPair />
-            <a href="#quote" className="cta cta-mail w-full sm:max-w-sm">
-              {site.ctaSecondary} {site.email}
+            <a href={site.emailMailto} className="cta cta-mail w-full sm:max-w-md">
+              {site.ctaSecondary}
             </a>
           </div>
         </div>
       </section>
 
-      <section id="services" className="border-b border-gold/50">
+      <section id="work" className="border-b border-gold/50">
         <div className="mx-auto max-w-5xl px-4 py-12">
-          <h2 className="text-center text-4xl sm:text-5xl">Services</h2>
+          <h2 className="text-center text-4xl sm:text-5xl">{site.workHeading}</h2>
           <ServiceList />
         </div>
       </section>
 
       <section>
         <div className="mx-auto max-w-5xl px-4 py-12">
-          <h2 className="text-4xl sm:text-5xl">Who</h2>
+          <h2 className="text-4xl sm:text-5xl">{site.aboutHeading}</h2>
           <p className="mt-6 max-w-xl text-xl font-medium">{site.about}</p>
-          <p className="mt-3 text-lg font-semibold text-gold">{site.spanish}</p>
         </div>
       </section>
     </div>

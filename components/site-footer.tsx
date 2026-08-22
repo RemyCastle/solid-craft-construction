@@ -11,30 +11,29 @@ export function SiteFooter() {
         <p className="max-w-xl text-base font-medium leading-relaxed">
           {site.legalName}
           <br />
-          {site.spanish}
-          <br />
-          {people.map((person, index) => (
+          {people.map((person) => (
             <span key={person.phoneTel}>
-              {index > 0 ? <br /> : null}
               {person.name}{" "}
               <a href={person.phoneTel} className="underline decoration-gold underline-offset-4">
-                {person.phoneDisplay}
+                {person.phoneFooter}
               </a>
+              <br />
             </span>
           ))}
-          <br />
           <a href={site.emailMailto} className="underline decoration-gold underline-offset-4">
             {site.email}
           </a>
+          <br />
+          {site.spanish}
         </p>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold uppercase tracking-wide">
           <Link href="/" className="hover:text-gold">
             Home
           </Link>
           <Link href="/services/" className="hover:text-gold">
-            Services
+            {site.workHeading}
           </Link>
-          <a href="#quote" className="hover:text-gold">
+          <a href={site.emailMailto} className="hover:text-gold">
             {site.ctaSecondary}
           </a>
         </div>

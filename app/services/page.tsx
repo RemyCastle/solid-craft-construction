@@ -4,7 +4,7 @@ import { ServicesView } from "@/components/services-view"
 import { site } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: site.workHeading,
   description: site.seoDescription,
   alternates: { canonical: "/services/" },
 }

@@ -13,7 +13,7 @@ export function ThumbDock() {
             href={person.phoneTel}
             className="flex min-h-16 flex-col items-center justify-center bg-gold px-1 py-2 text-center text-ground first:border-r first:border-ground"
           >
-            <span className="font-display text-xl uppercase leading-none">{person.cta}</span>
+            <span className="font-display text-lg uppercase leading-none">{person.dock}</span>
             <span className="mt-1 text-[10px] font-bold">{person.phoneDisplay}</span>
           </a>
         ))}
@@ -21,7 +21,7 @@ export function ThumbDock() {
           href={site.emailMailto}
           className="flex min-h-16 flex-col items-center justify-center border-l border-gold px-1 py-2 text-center"
         >
-          <span className="font-display text-xl uppercase leading-none">{site.ctaSecondary}</span>
+          <span className="font-display text-lg uppercase leading-none">{site.ctaSecondary}</span>
         </a>
       </div>
     </nav>
