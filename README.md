@@ -36,7 +36,9 @@ npx wrangler d1 execute solid-craft-construction --local --file=seed.sql
 npx wrangler pages dev ./out
 ```
 
-Open `/admin`. First visit: **Create owner** (your name + a password of at least 8 characters). Then Site / Requests / Photos / Users.
+Open `/admin`. First visit: **Create owner** (your name + a password of at least 8 characters). Then Site / Requests / Photos / Reviews / Users.
+
+Reviews are optional. Paste a real quote (name, stars they gave, text) and mark Featured to show it. Highest stars first. Zero featured = no review quotes on the public page. Do not invent reviews or a CCB.
 
 `ready()` also creates tables and Voice seed if D1 is empty, so the first `/admin` hit still works after schema is missing.
 

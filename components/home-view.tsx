@@ -3,6 +3,7 @@
 import { BrandMark } from "@/components/brand-mark"
 import { CallPair } from "@/components/call-pair"
 import { useLive } from "@/components/live-public"
+import { ReviewList } from "@/components/review-list"
 import { ServiceList } from "@/components/service-list"
 import { WorkStack } from "@/components/work-stack"
 import { aboutLines } from "@/lib/public"
@@ -46,6 +47,7 @@ export function HomeView() {
           </div>
         </div>
       </section>
+      <ReviewList />
     </div>
   )
 }

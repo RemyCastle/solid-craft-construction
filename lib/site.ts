@@ -23,6 +23,7 @@ export const site = {
   ctaSecondary: "Email us",
   workHeading: "Work",
   aboutHeading: "About",
+  reviewsHeading: "Reviews",
   notFound: "That page is not on this site.",
 } as const
 

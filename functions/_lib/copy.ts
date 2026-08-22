@@ -86,6 +86,7 @@ export function copyFromSiteRow(row: SiteRow) {
     freeEstimates: "Free estimates",
     workHeading: "Work",
     aboutHeading: "About",
+    reviewsHeading: "Reviews",
     legalName: "Solid Craft Construction LLC",
     people: [
       personFrom(row.joel_name, row.joel_phone_display, row.joel_phone_footer, row.joel_phone_tel, row.joel_cta),

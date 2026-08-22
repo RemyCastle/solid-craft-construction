@@ -47,8 +47,16 @@ export type LiveCopy = {
   freeEstimates: string
   workHeading: string
   aboutHeading: string
+  reviewsHeading: string
   legalName: string
   people: LivePerson[]
+}
+
+export type LiveReview = {
+  id: number
+  name: string
+  stars: number
+  text: string
 }
 
 export type SiteRow = {
@@ -150,6 +158,7 @@ export function copyFromSiteRow(row: SiteRow): LiveCopy {
     freeEstimates: site.freeEstimates,
     workHeading: site.workHeading,
     aboutHeading: site.aboutHeading,
+    reviewsHeading: site.reviewsHeading,
     legalName: site.legalName,
     people: [
       personFrom(row.joel_name, row.joel_phone_display, row.joel_phone_footer, row.joel_phone_tel, row.joel_cta),
@@ -173,6 +182,7 @@ export const fallbackCopy: LiveCopy = {
   freeEstimates: site.freeEstimates,
   workHeading: site.workHeading,
   aboutHeading: site.aboutHeading,
+  reviewsHeading: site.reviewsHeading,
   legalName: site.legalName,
   people: people.map((person) => ({
     name: person.name,
@@ -200,3 +210,5 @@ export const fallbackPhotos: LivePhoto[] = workPhotos.map((photo, index) => ({
 }))
 
 export const fallbackPairs: LivePair[] = []
+
+export const fallbackReviews: LiveReview[] = []

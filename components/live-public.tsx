@@ -6,11 +6,13 @@ import {
   fallbackCopy,
   fallbackPairs,
   fallbackPhotos,
+  fallbackReviews,
   fallbackServices,
   photoIsReady,
   type LiveCopy,
   type LivePair,
   type LivePhoto,
+  type LiveReview,
   type LiveService,
 } from "@/lib/public"
 
@@ -19,6 +21,7 @@ type Live = {
   services: LiveService[]
   photos: LivePhoto[]
   pairs: LivePair[]
+  reviews: LiveReview[]
   live: boolean
 }
 
@@ -27,6 +30,7 @@ const LiveContext = createContext<Live>({
   services: fallbackServices,
   photos: fallbackPhotos,
   pairs: fallbackPairs,
+  reviews: fallbackReviews,
   live: false,
 })
 
@@ -40,6 +44,7 @@ export function LivePublicProvider({ children }: { children: React.ReactNode }) 
     services: fallbackServices,
     photos: fallbackPhotos,
     pairs: fallbackPairs,
+    reviews: fallbackReviews,
     live: false,
   })
 
@@ -48,8 +53,9 @@ export function LivePublicProvider({ children }: { children: React.ReactNode }) 
     Promise.all([
       fetch("/api/public/site").then((res) => (res.ok ? res.json() : null)),
       fetch("/api/public/photos").then((res) => (res.ok ? res.json() : null)),
+      fetch("/api/public/reviews").then((res) => (res.ok ? res.json() : null)),
     ])
-      .then(([siteRes, photoRes]) => {
+      .then(([siteRes, photoRes, reviewRes]) => {
         if (gone) return
         const copy = siteRes?.copy ? (siteRes.copy as LiveCopy) : fallbackCopy
         const services =
@@ -62,7 +68,12 @@ export function LivePublicProvider({ children }: { children: React.ReactNode }) 
         const pairs = photoRes
           ? ((photoRes.pairs as LivePair[]) || []).filter((pair) => pair.before && pair.after)
           : fallbackPairs.filter((pair) => pair.before && pair.after)
-        setState({ copy, services, photos, pairs, live: Boolean(siteRes || photoRes) })
+        const reviews = reviewRes
+          ? ((reviewRes.reviews as LiveReview[]) || []).filter(
+              (review) => review.name && review.text && review.stars >= 1 && review.stars <= 5,
+            )
+          : fallbackReviews
+        setState({ copy, services, photos, pairs, reviews, live: Boolean(siteRes || photoRes || reviewRes) })
       })
       .catch(() => {
         // keep fallback so static export never goes blank
