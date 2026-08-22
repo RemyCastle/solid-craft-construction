@@ -1,18 +1,14 @@
-import { BrandMark } from "@/components/brand-mark"
 import { CallPair } from "@/components/call-pair"
+import { CardLockup } from "@/components/card-lockup"
 import { ServiceList } from "@/components/service-list"
-import { Wordmark } from "@/components/wordmark"
 import { site } from "@/lib/site"
 
 export function HomeView() {
   return (
     <div className="bg-ground">
       <section className="border-b border-gold/50">
-        <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-12 text-center sm:py-16">
-          <BrandMark priority className="h-28 w-auto sm:h-36" />
-          <div className="mt-5">
-            <Wordmark />
-          </div>
+        <div className="mx-auto flex max-w-5xl flex-col items-center px-4 py-10 text-center sm:py-14">
+          <CardLockup priority className="h-auto w-full max-w-md ring-1 ring-gold/60" />
           <h1 className="mt-10 max-w-xl text-4xl text-ink sm:text-5xl md:text-[3.4rem]">
             {site.heroTitle}
           </h1>

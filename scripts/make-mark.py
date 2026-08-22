@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Rasterize the Solid Craft house mark for chrome and favicons.
+"""Last-resort reconstruction of the house mark.
 
-The mark matches the printed card: white block SC as the house body,
-gold roofline, four-pane window in the peak, chimney on the right slope.
+Prefer the printed-card crops in public/ (card-lockup.jpg, logo-mark.png).
+Do not run this if those files already exist — it overwrites them.
 """
 
 from __future__ import annotations

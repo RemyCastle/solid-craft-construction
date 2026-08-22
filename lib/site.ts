@@ -58,5 +58,6 @@ export const services = [
 export const marks = {
   logoMark: "/logo-mark.png",
   logoTile: "/logo-tile.png",
+  cardLockup: "/card-lockup.jpg",
   og: "/og.png",
 } as const

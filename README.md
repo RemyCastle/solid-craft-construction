@@ -56,5 +56,6 @@ No street. No town. No CCB. No hours. No star scores. No job photos we do not ha
 Ground `#1A1E22`. Card `#212426`. Ink `#F3F1EC`. Gold `#DCB368`. Mute `#7C8387`.
 Big Shoulders Display + Libre Franklin.
 
-- `public/logo-mark.png` — card house mark (SC, gold roof, window, chimney)
-- `public/logo-tile.png` — same mark on charcoal, for tiles
+- `public/card-lockup.jpg` — printed-card crop (mark + SOLID CRAFT CONSTRUCTION LLC)
+- `public/logo-mark.png` — SC + house crop from that card, for chrome
+- `public/logo-tile.png` — same mark on a charcoal tile
