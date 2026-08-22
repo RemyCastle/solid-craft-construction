@@ -16,6 +16,7 @@ type Lead = {
   job: string
   need: string
   photo_key: string | null
+  photos?: string[]
   status: "unread" | "read"
 }
 type UserRow = { id: number; name: string; created_at: string }
@@ -450,14 +451,17 @@ function RequestsTab({ onNote }: { onNote: (n: string) => void }) {
             {lead.job ? ` · ${lead.job}` : ""}
           </p>
           <p className="mt-2 whitespace-pre-line">{lead.need}</p>
-          {lead.photo_key ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={`/api/media/lead/${lead.id}`}
-              alt=""
-              className="mt-3 max-h-64 w-auto ring-1 ring-gold/40"
-            />
-          ) : null}
+          {(lead.photos && lead.photos.length ? lead.photos : lead.photo_key ? [`/api/media/lead/${lead.id}`] : []).map(
+            (src) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className="mt-3 max-h-64 w-auto ring-1 ring-gold/40"
+              />
+            ),
+          )}
         </article>
       ))}
     </div>

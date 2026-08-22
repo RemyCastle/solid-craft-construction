@@ -18,10 +18,9 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
     return json({ error: "Name, what you need, and a phone or email." }, 400)
   }
 
-  const files = [
-    ...incoming.getAll("attachment"),
-    incoming.get("photo"),
-  ].filter((item): item is File => item instanceof File && item.size > 0)
+  const files = incoming
+    .getAll("attachment")
+    .filter((item): item is File => item instanceof File && item.size > 0)
 
   const created = await env.DB.prepare(
     `INSERT INTO leads (created_at, name, phone, email, job, need, status)
@@ -31,19 +30,22 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
     .run()
   const leadId = Number(created.meta.last_row_id)
 
-  const file = files[0]
-  if (file) {
-    const key = `leads/${leadId}-${fileKey(file.name)}`
+  const stored: string[] = []
+  for (const [i, file] of files.entries()) {
+    const key = `leads/${leadId}/${i}-${fileKey(file.name)}`
     try {
       await env.PHOTOS.put(key, await file.arrayBuffer(), {
         httpMetadata: { contentType: file.type || "image/jpeg" },
       })
-      await env.DB.prepare("UPDATE leads SET photo_key = ? WHERE id = ?")
-        .bind(key, leadId)
-        .run()
+      stored.push(key)
     } catch {
       // R2 may be off; keep the lead
     }
+  }
+  if (stored.length) {
+    await env.DB.prepare("UPDATE leads SET photo_key = ?, photo_keys = ? WHERE id = ?")
+      .bind(stored[0], JSON.stringify(stored), leadId)
+      .run()
   }
 
   const outbound = new FormData()

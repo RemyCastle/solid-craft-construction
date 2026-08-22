@@ -11,7 +11,7 @@ Printed domain: [solidcraftbuilds.com](https://solidcraftbuilds.com). This repo 
 - Cloudflare Pages Functions in `/functions`
 - New D1 database `solid-craft-construction` (binding `DB`) — this project only
 - New R2 bucket `solid-craft-construction-photos` (binding `PHOTOS`) — quote images, Work uploads, optional before/after
-- Quote form writes the D1 inbox and also emails `pnw@solidcraftbuilds.com` via FormSubmit when that inbox is confirmed
+- Quote form writes the D1 inbox (optional job photos to R2) and also emails `pnw@solidcraftbuilds.com` via FormSubmit when that inbox is confirmed
 
 Do not reuse Sharky's D1, R2, `SESSION_SECRET`, cookie, or passwords.
 

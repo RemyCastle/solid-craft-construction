@@ -91,6 +91,7 @@ export function QuoteForm() {
           name="attachment"
           type="file"
           accept="image/*"
+          multiple
           className="field-ink py-2"
         />
       </label>

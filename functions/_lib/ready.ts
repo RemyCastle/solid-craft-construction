@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS leads (
   job TEXT NOT NULL DEFAULT '',
   need TEXT NOT NULL,
   photo_key TEXT,
+  photo_keys TEXT,
   status TEXT NOT NULL DEFAULT 'unread'
 );
 `
@@ -113,6 +114,11 @@ const PHOTO_SEED = [
 export async function ready(env: Env) {
   for (const statement of SCHEMA.split(";").map((s) => s.trim()).filter(Boolean)) {
     await env.DB.prepare(statement).run()
+  }
+  try {
+    await env.DB.prepare("ALTER TABLE leads ADD COLUMN photo_keys TEXT").run()
+  } catch {
+    // already present
   }
   const site = await env.DB.prepare("SELECT id FROM site WHERE id = 1").first()
   if (!site) {

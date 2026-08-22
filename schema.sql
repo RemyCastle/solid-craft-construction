@@ -70,5 +70,6 @@ CREATE TABLE IF NOT EXISTS leads (
   job TEXT NOT NULL DEFAULT '',
   need TEXT NOT NULL,
   photo_key TEXT,
+  photo_keys TEXT,
   status TEXT NOT NULL DEFAULT 'unread'
 );
